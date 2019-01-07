@@ -18,6 +18,9 @@
       (after-load 'python
         (push 'company-anaconda company-backends)))))
 
+(require-package 'pipenv)
+
+(add-hook 'python-mode-hook 'pipenv-mode)
 
 (provide 'init-python)
 ;;; init-python.el ends here

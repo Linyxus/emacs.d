@@ -5,7 +5,6 @@
 ;; a number of other files.
 
 ;;; Code:
-
 ;; Produce backtraces when errors occur
 (setq debug-on-error t)
 
