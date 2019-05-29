@@ -22,5 +22,7 @@
 
 (add-hook 'python-mode-hook 'pipenv-mode)
 
+;; (define-key python-mode-map (kbd "RET") 'newline)
+
 (provide 'init-python)
 ;;; init-python.el ends here

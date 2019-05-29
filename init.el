@@ -20,6 +20,9 @@
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 
+;; Set up package config env
+(setenv "PKG_CONFIG_PATH" "/usr/local/opt/qt/lib/pkgconfig:/usr/local/opt/nss/lib/pkgconfig:/usr/local/opt/sqlite/lib/pkgconfig:/usr/local/opt/readline/lib/pkgconfig:/usr/local/Cellar/poppler/0.76.1/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig:/usr/local/opt/libffi/lib/pkgconfig")
+
 ;;----------------------------------------------------------------------------
 ;; Adjust garbage collection thresholds during startup, and thereafter
 ;;----------------------------------------------------------------------------
@@ -100,6 +103,7 @@
 (require 'init-haml)
 (require 'init-http)
 (require 'init-python)
+;; (require 'init-ein)
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-purescript)
@@ -114,12 +118,15 @@
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
+
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
 (require 'init-clojure)
 (require 'init-clojure-cider)
 (require 'init-common-lisp)
+
+(require 'init-latex)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
@@ -147,6 +154,9 @@
 (when (maybe-require-package 'uptimes)
   (setq-default uptimes-keep-count 200)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
+
+(require-package 'pdf-tools)
+(pdf-tools-install)
 
 
 ;;----------------------------------------------------------------------------
