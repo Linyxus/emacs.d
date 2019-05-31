@@ -4,6 +4,7 @@
 
 (require 'latex)
 (require-package 'auctex)
+(require 'yasnippet)
 
 ;; Set environment variables
 (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
@@ -18,6 +19,8 @@
 ;; to have the buffer refresh after compilation
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)
+
+(add-hook 'LaTeX-mode-hook 'yas-minor-mode)
 
 (provide 'init-latex)
 ;;; init-latex.el ends here

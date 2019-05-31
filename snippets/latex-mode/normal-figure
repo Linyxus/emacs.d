@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Normal Figure
+# key: fig
+# --
+
+\begin{figure}[h]
+\caption{$1}
+\centering
+\includegraphics[width=0.5\textwidth]{$2}
+\end{figure}
+
+$0

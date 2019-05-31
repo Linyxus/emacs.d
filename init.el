@@ -127,6 +127,7 @@
 (require 'init-common-lisp)
 
 (require 'init-latex)
+(require 'init-yasnippet)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
