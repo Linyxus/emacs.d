@@ -22,5 +22,7 @@
 
 (add-hook 'LaTeX-mode-hook 'yas-minor-mode)
 
+(TeX-engine-set 'xetex)
+
 (provide 'init-latex)
 ;;; init-latex.el ends here
